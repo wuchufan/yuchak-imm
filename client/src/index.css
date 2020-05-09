@@ -1,13 +1,19 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family:'Raleway-Regular';
+  src: local('Raleway-Regular'),url(./assets/fonts/Raleway/Raleway-Regular.ttf) format('truetype');
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family:'Raleway-Bold';
+  src: local('Raleway-Bold'),url(./assets/fonts/Raleway/Raleway-Bold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family:'Raleway-SemiBold';
+  src: local('Raleway-SemiBold'),url(./assets/fonts/Raleway/Raleway-SemiBold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family:'Raleway-Light';
+  src: local('Raleway-Light'),url(./assets/fonts/Raleway/Raleway-Light.ttf) format('truetype');
 }

@@ -1,0 +1,31 @@
+@import '../../../sass/main';
+
+.container{
+  display:grid;
+  grid-template-columns: [square-start] 10px [square-end content-start] 1fr [content-end];
+  grid-column-gap: 2rem;
+  grid-row-gap:1.6rem;
+  align-items: center;
+}
+
+.title{
+  grid-column: content-start / content-end;
+
+  &__link{
+    color:$color-secondary;
+    font-size: 2rem;
+    text-decoration: none;
+
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}
+
+.paragraph{
+  grid-column: content-start / content-end;
+  &__p{
+    color:$color-primary;
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,45 @@
+@import '../../sass/main';
+$title-margin-top:8rem;
+
+
+.container{
+  display:grid;
+  grid-template-columns:[title-start] $landing-width [title-end items-start] 1fr [items-end];
+
+}
+
+.title{
+  grid-column: title-start / title-end;
+  background-color: rgba(234, 244, 246, 1);
+  display:flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: center;
+
+  &__main{
+    font-size: 4.2rem;
+    font-weight: lighter;
+    letter-spacing: .5rem;
+  }
+
+  &__sub{
+    font-size: 2rem;
+    font-weight: lighter;
+  }
+  &__inner{
+    color:$color-primary;
+    margin:$title-margin-top 15rem 0 0;
+  }
+
+}
+
+
+.service-items{
+  grid-column: items-start / items-end;
+  display:grid;
+  grid-template-columns:repeat(2,30rem);
+  grid-auto-rows: max-content;
+  grid-gap:8rem;
+  margin:$title-margin-top 5rem;
+
+}
