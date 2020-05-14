@@ -1,13 +1,12 @@
 import React, {Fragment} from 'react';
 import {Parallax} from 'react-scroll-parallax';
 import cls from './Landing.module.scss';
-import bgImage from '../../assets/imgs/landing/landing.jpg';
 import irccLogo from '../../assets/imgs/landing/ircc-logo.jpg';
 
 const Landing = () => {
 
   return (<Fragment>
-    <section className={cls['container']}>
+    <section id='landing' className={cls['container']}>
       <div className={cls['landing-info']}>
         <div className={cls['landing-info__inner-box']}>
           <h1 className={cls['landing-info__title']}>
@@ -15,7 +14,7 @@ const Landing = () => {
           </h1>
           <div className={cls['landing-info__content-container']}>
 
-            <img loading='lazy' className={cls['landing-info__image']} src={irccLogo}/>
+            <img alt='logo' loading='lazy' className={cls['landing-info__image']} src={irccLogo}/>
             <div>
               <p style={{
                   fontSize: '1.8rem',

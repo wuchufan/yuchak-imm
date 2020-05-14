@@ -1,0 +1,64 @@
+@import '../../sass/main';
+
+.container{
+    background-color:#eaf4f6;
+  display:grid;
+  grid-template-columns:max-content;
+  grid-template-areas:
+  'university'
+  'collage';
+  justify-content: center;
+  padding:5rem;
+}
+
+.university,
+.collage{
+  &__title{
+    font-size:4.2rem;
+    color:$color-secondary;
+    font-weight:lighter;
+    margin-bottom: 1rem;
+  }
+
+  &__hr{
+    border: .5px dashed $color-primary;
+
+  }
+}
+
+
+.university{
+  grid-area:university;
+  margin-bottom: 5rem;
+}
+
+.collage{
+  grid-area:collage;
+}
+
+.images{
+  display:flex;
+  align-items: center;
+  justify-content: space-around;
+  margin:2rem 0;
+
+  &__image{
+    display:inline-block;
+
+    &:not(:last-child){
+      margin-right:2rem;
+    }
+  }
+}
+
+
+.contact-us{
+  font-size:1.9rem;
+  color:$color-secondary;
+
+  &__link{
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+}

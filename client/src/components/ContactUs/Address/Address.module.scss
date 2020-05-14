@@ -1,0 +1,26 @@
+.container{
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(25rem,1fr));
+  font-style: normal;
+
+}
+
+.title,
+.info{
+  font-size: 2rem;
+  color:white;
+}
+
+.email{
+  color:inherit;
+  text-decoration: inherit;
+}
+
+.wechat{
+
+  &__img{
+    margin-top:4rem;
+    height:14.1rem;
+    width:14.1rem;
+  }
+}

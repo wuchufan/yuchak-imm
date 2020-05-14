@@ -5,21 +5,22 @@ import cls from './App.module.scss';
 
 //components
 import NavBar from './components/NavBar/NavBar';
-import Landing from './components/Landing/Landing';
-import Service from './components/Service/Service';
-import AboutUs from './components/AboutUs/AboutUs';
-
+import Main from './layout/Main';
+import Evaluation from './layout/Evaluation';
+import Footer from './components/Footer/Footer';
 
 const App = () => {
   return (<Fragment>
     <Router>
       <ParallaxProvider>
       <NavBar/>
-      <main style={{height:'300vh'}} className={cls['container']}>
-        <Landing/>
-        <Service/>
-        <AboutUs/>
+      <main className={cls['container']}>
+        <Switch>
+          <Route exact path='/' component={Main} />
+          <Route exact path='/evaluation' component={Evaluation} />
+        </Switch>
       </main>
+      <Footer/>
     </ParallaxProvider>
     </Router>
   </Fragment>);

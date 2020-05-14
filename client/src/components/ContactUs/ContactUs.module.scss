@@ -1,0 +1,54 @@
+@import '../../sass/main';
+
+.container {
+  background-image: linear-gradient(rgba(15, 76, 133, 0.9),rgba(15, 76, 133, 0.9)),url('../../assets/imgs/contactUs/contactUs.jpg');
+  background-size: cover;
+  display:grid;
+  grid-template-columns: 40% 1fr;
+  grid-template-rows:1fr 1fr;
+  grid-template-areas:
+  'title form'
+  'title address';
+}
+
+.title {
+  grid-area:title;
+  background-color: rgba(0, 48, 91, 0.4);
+  padding:10rem 8rem;
+  &__flex-container{
+    margin-left: auto;
+    display:flex;
+    flex-direction:column;
+    width:max-content;
+    color:white;
+    font-weight:lighter;
+  }
+
+  &__main,
+  &__sub{
+    color:white;
+    font-weight:lighter;
+  }
+
+  &__main{
+    font-size: 4.2rem;
+  }
+
+  &__sub{
+    font-size:2.4rem;
+  }
+
+}
+
+.form{
+  display:flex;
+  flex-direction:column;
+  padding:4rem;
+
+}
+
+
+.address{
+  grid-area:address;
+  padding:4rem;
+}

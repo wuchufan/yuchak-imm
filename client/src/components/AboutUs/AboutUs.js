@@ -1,7 +1,7 @@
 import React from 'react';
 import cls from './AboutUs.module.scss';
 import { Link } from 'react-router-dom';
-import { Link as ScrollLink, animeScroll as scroll } from 'react-scroll';
+import { Link as ScrollLink } from 'react-scroll';
 
 
 const AboutUs = () => {
@@ -11,7 +11,7 @@ const AboutUs = () => {
   }
 
   return (
-    <section className={cls['container']}>
+    <section id='aboutus' className={cls['container']}>
       <div className={cls['content-container']}>
         <h1 className={cls['main-title']}>
           关于我们

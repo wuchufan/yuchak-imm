@@ -3,7 +3,7 @@ import cls from './Service.module.scss';
 import ServiceItem from './ServiceItem/ServiceItem';
 
 const Service = () => {
-  return (<section className={cls['container']}>
+  return (<section id='service' className={cls['container']}>
     <div className={cls['title']}>
       <div className={cls['title__inner']}>
         <h1 className={cls['title__main']}>

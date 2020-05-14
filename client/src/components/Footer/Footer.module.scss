@@ -1,0 +1,55 @@
+@import '../../sass/main';
+
+.footer{
+  color:$color-primary;
+    padding:5rem 0 3rem;
+
+}
+
+.top-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,40rem);
+  justify-content: center;
+  justify-items: center;
+  grid-gap:4rem;
+  margin-bottom: 5rem;
+}
+
+
+
+.address,
+.contact
+{
+  display:flex;
+  flex-direction: column;
+  text-align: center;
+  &__header{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  &__content{
+    font-size:1.6rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.copyright{
+  font-size:1.6rem;
+  text-align: center;
+}
+
+.phone-fax{
+  display:flex;
+  align-items: center;
+  &__header{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  &__content{
+    font-size:1.6rem;
+    margin-bottom: 1rem;
+
+  }
+}
