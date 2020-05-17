@@ -3,6 +3,8 @@ import cls from './Footer.module.scss';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+
+  
   return (<footer className={cls['footer']}>
     <div className={cls['top-container']}>
 

@@ -1,6 +1,6 @@
 import React,{ Fragment ,useState } from 'react';
 import cls from './Form.module.scss';
-import { sendEmail } from '../../../ajax/email';
+import { sendContact } from '../../../ajax/email';
 
 
 const Form = () => {
@@ -39,23 +39,22 @@ const Form = () => {
     </div>
     <form className={cls['form']} onSubmit={async (e)=>{
       e.preventDefault();
-      const res = await sendEmail({
+      const res = await sendContact({
         name,
         email,
         subject,
         message
       });
-      console.log(res);
+  
       setFormData({
         name:'',
         email:'',
         subject:'',
         message:''
       })
-  
+
     }}>
       <input onChange={(e)=>onChange(e)} value={name} name='name' type='text' placeholder='Name' className={cls['form__input'] + ' ' + cls['form__input--1']} required/>
-
 
       <input onChange={(e)=>onChange(e)} value={email} name='email' type='email' placeholder='Email' className={cls['form__input'] + ' ' + cls['form__input--2']} required/>
 

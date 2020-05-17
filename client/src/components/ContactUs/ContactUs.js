@@ -9,7 +9,7 @@ const ContactUs = () => {
 
 
   return (
-    <section className={cls['container']}>
+    <section id='contact' className={cls['container']}>
       <div className={cls['title']}>
         <div className={cls['title__flex-container']}>
         <h1 className={cls['title__main']}>

@@ -4,11 +4,7 @@ import { Link } from 'react-router-dom';
 import { Link as ScrollLink } from 'react-scroll';
 
 
-const AboutUs = () => {
-  const scrollConfig = {
-    smooth:true,
-    duration:500
-  }
+const AboutUs = ({scrollConfig}) => {
 
   return (
     <section id='aboutus' className={cls['container']}>

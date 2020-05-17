@@ -6,13 +6,7 @@ import logo from '../../assets/imgs/logo/logo.jpg';
 
 const NavBar = ({location: {
     pathname
-  }}) => {
-    
-  const scrollConfig = {
-    smooth: true,
-    duration: 500,
-    offset: -80
-  }
+  },scrollConfig}) => {
 
 
   let navbar = (<nav className={cls['container']}>

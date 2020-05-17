@@ -14,7 +14,7 @@ import yorku from '../../assets/imgs/UniApplication/yorku.jpg';
 
 
 
-const UniApplication = () => {
+const UniApplication = ({scrollConfig}) => {
 
   return (<section id='application' className={cls['container']}>
 
@@ -45,7 +45,7 @@ const UniApplication = () => {
       </div>
     </div>
 
-    <p className={cls['contact-us']}>​如需申请院校，请填写下方表格<ScrollLink className={cls['contact-us__link']} to='contact'>联系我们</ScrollLink>。</p>
+    <p className={cls['contact-us']}>​如需申请院校，请填写下方表格<ScrollLink {...scrollConfig} className={cls['contact-us__link']} to='contact'>联系我们</ScrollLink>。</p>
 
   </section>);
 }

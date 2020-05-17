@@ -1,11 +1,11 @@
 const express = require('express')
 const router = express.Router();
 const {
-  sendEmail
+  sendContact
 } = require('../../controllers/email');
 
-router.route('/')
-.post(sendEmail);
+router.route('/contact')
+.post(sendContact);
 
 
 
