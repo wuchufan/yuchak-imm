@@ -1,10 +1,10 @@
 import React,{ useState } from 'react';
 import cls from './EvaluationForm.module.scss';
-import { sendEmail } from '../../ajax/email';
+import { sendEvaluation } from '../../ajax/email';
 
 
 
-const EvaluationForm = ({}) => {
+const EvaluationForm = () => {
 
   const [formData,setFormData] = useState({
     firstName:'',
@@ -18,6 +18,7 @@ const EvaluationForm = ({}) => {
     netWorth:'',
     visa:'',
     hadApplied:'',
+    highestDegree:'',
     from1:'',
     to1:'',
     income1:'',
@@ -27,18 +28,23 @@ const EvaluationForm = ({}) => {
     from3:'',
     to3:'',
     income3:''
-
-  })
+  });
 
 
 
   const {
     firstName,
     lastName,
+    gender,
     birthday,
     phone,
     email,
     idNumber,
+    martialStatus,
+    netWorth,
+    visa,
+    hadApplied,
+    highestDegree,
     from1,
     to1,
     income1,
@@ -56,12 +62,39 @@ const EvaluationForm = ({}) => {
       ...formData,
       [e.target.name]:e.target.value
     })
+
   };
 
 
   return (<form className={cls['container']} onSubmit={async (e)=>{
     e.preventDefault();
-    console.log(`formData is sent as:${JSON.stringify(formData)}`);
+
+    await sendEvaluation({...formData});
+    setFormData({
+        firstName:'',
+        lastName:'',
+        gender:'',
+        birthday:'',
+        phone:'',
+        email:'',
+        idNumber:'',
+        martialStatus:'',
+        netWorth:'',
+        visa:'',
+        hadApplied:'',
+        highestDegree:'',
+        from1:'',
+        to1:'',
+        income1:'',
+        from2:'',
+        to2:'',
+        income2:'',
+        from3:'',
+        to3:'',
+        income3:''
+    })
+
+
   }}>
     <h1 className={cls['form-title']}>客户评估表 Client Assessment Form</h1>
 
@@ -80,7 +113,7 @@ const EvaluationForm = ({}) => {
         </div>
         <div className={cls['input-box'] + ' ' + cls['input-box--3']}>
           <label className={cls['label']}>性别GENDER：</label>
-          <select onChange={(e)=>onChange(e)} className={cls['input']} name='gender'>
+          <select value={gender} onChange={(e)=>onChange(e)} className={cls['input']} name='gender'>
             <option className={cls['input__option']} value=''></option>
             <option className={cls['input__option']} value='男M'>男M</option>
             <option className={cls['input__option']} value='女F'>女F</option>
@@ -92,7 +125,7 @@ const EvaluationForm = ({}) => {
         </div>
         <div className={cls['input-box'] + ' ' + cls['input-box--5']}>
           <label className={cls['label']}>联系电话PHONE NUMBER</label>
-          <input onChange={(e)=>onChange(e)} className={cls['input']} value={phone} type='tel' name='phone'/>
+          <input onChange={(e)=>onChange(e)} className={cls['input']} value={phone} type='number' name='phone'/>
         </div>
         <div className={cls['input-box'] + ' ' + cls['input-box--6']}>
           <label className={cls['label']}>邮箱EMAIL</label>
@@ -104,7 +137,7 @@ const EvaluationForm = ({}) => {
         </div>
         <div className={cls['input-box'] + ' ' + cls['input-box--8']}>
           <label className={cls['label']}>婚姻状况MARTIAL STATUS</label>
-          <select onChange={(e)=>onChange(e)} name='martialStatus' className={cls['input']}>
+          <select value={martialStatus} onChange={(e)=>onChange(e)} name='martialStatus' className={cls['input']}>
             <option value='' className={cls['input__option']}></option>
             <option value='未婚 SINGLE' className={cls['input__option']}>未婚 SINGLE</option>
             <option value='已婚 MARRIED' className={cls['input__option']}>已婚 MARRIED</option>
@@ -119,7 +152,7 @@ const EvaluationForm = ({}) => {
             含本人及配偶名下之存款、股票、房产现在净值（扣除按揭），公司股权值等
             <br/>FAMILY NET WORTH INCLUDING SAVING, STOCKS, LAND AND REAL PROPERTY (AFTER MORTGAGE), BUSINESS CURRENT VALUE, ETC.
           </label>
-          <select onChange={(e)=>onChange(e)} name='netWorth' className={cls['input']}>
+          <select value={netWorth} onChange={(e)=>onChange(e)} name='netWorth' className={cls['input']}>
             <option className={cls['input__option']} value=''></option>
             <option className={cls['input__option']} value='加币10 万以上OVER CAD 100K'>加币10 万以上OVER CAD 100K</option>
             <option className={cls['input__option']} value='加币20 万以上OVER CAD 200K'>加币20 万以上OVER CAD 200K</option>
@@ -131,7 +164,7 @@ const EvaluationForm = ({}) => {
         </div>
         <div className={cls['input-box'] + ' ' + cls['input-box--10']}>
           <label className={cls['label']}>本人持有加拿大签证类别（如旅游、学签、工签等）<br/>YOUR HOLDING CANADIAN VISA TYPE</label>
-          <select onChange={(e)=>onChange(e)} name='visa' className={cls['input']}>
+          <select value={visa} onChange={(e)=>onChange(e)} name='visa' className={cls['input']}>
             <option className={cls['input__option']} value=''></option>
             <option className={cls['input__option']} value='旅游'>旅游 VISTOR VISA</option>
             <option className={cls['input__option']} value='学签'>学签 STUDY PERMIT</option>
@@ -141,7 +174,7 @@ const EvaluationForm = ({}) => {
         <div className={cls['input-box'] + ' ' + cls['input-box--11']}>
           <label className={cls['label']}>本人或家庭成员是否曾申请过加拿大移民
             <br/>YOU AND YOUR FAMILY MEMBERS APPLIED FOR IMMIGRATION/VISA TO CANADA?</label>
-          <select onChange={(e)=>onChange(e)} name='hadApplied' className={cls['input']}>
+          <select value={hadApplied} onChange={(e)=>onChange(e)} name='hadApplied' className={cls['input']}>
             <option className={cls['input__option']} value=''></option>
             <option className={cls['input__option']} value='是Yes'>是YES</option>
             <option className={cls['input__option']} value='否No'>否NO</option>
@@ -149,7 +182,7 @@ const EvaluationForm = ({}) => {
         </div>
         <div className={cls['input-box'] + ' ' + cls['input-box--12']}>
           <label className={cls['label']}>已完成的最高学历（已取得证书）HIGHEST GRADE</label>
-          <select onChange={(e)=>onChange(e)} name='highestDegree' className={cls['input']}>
+          <select value={highestDegree} onChange={(e)=>onChange(e)} name='highestDegree' className={cls['input']}>
             <option className={cls['input__option']} value=''></option>
             <option className={cls['input__option']} value='大专 COLLEGE'>大专 COLLEGE</option>
             <option className={cls['input__option']} value='本科 UNIVERSITY'>本科 UNIVERSITY</option>
@@ -187,7 +220,7 @@ const EvaluationForm = ({}) => {
                 公司1 年收入<br/>
                 FIRM1 ANNUAL INCOME
               </label>
-              <input onChange={(e)=>onChange(e)} value={income1} name='income1' className={cls['input']}/>
+              <input onChange={(e)=>onChange(e)} type='number' value={income1} name='income1' className={cls['input']}/>
             </div>
 
           </div>

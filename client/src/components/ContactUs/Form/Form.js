@@ -39,13 +39,13 @@ const Form = () => {
     </div>
     <form className={cls['form']} onSubmit={async (e)=>{
       e.preventDefault();
-      const res = await sendContact({
+      await sendContact({
         name,
         email,
         subject,
         message
       });
-  
+
       setFormData({
         name:'',
         email:'',
