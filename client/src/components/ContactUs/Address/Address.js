@@ -18,9 +18,9 @@ const Address = () => {
         Suite 802. 100 Allstate Pkwy, Markham, ON L3R 6H3
       </p>
       <p className={cls['info']}>
-        Email:
-        <a className={cls['email']} href='mailto:info@ycimm.com'>
-          info@ycimm.com
+        Email:{' '}
+        <a className={cls['email']} href='mailto:yuchakcorporation@gmail.com'>
+          yuchakcorporation@gmail.com
         </a>
       </p>
       <p style={{marginBottom:'4rem'}} className={cls['info']}>

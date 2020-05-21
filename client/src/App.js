@@ -8,7 +8,10 @@ import cls from './App.module.scss';
 import NavBar from './components/NavBar/NavBar';
 import Main from './layout/Main';
 import Evaluation from './layout/Evaluation';
+import Blogs from './layout/Blogs';
 import Footer from './components/Footer/Footer';
+
+
 
 const App = () => {
 
@@ -27,7 +30,7 @@ const App = () => {
         <Switch>
           <Route exact path='/' render={(props)=><Main {...props} scrollConfig={scrollConfig}/>} />
           <Route exact path='/evaluation' component={Evaluation} />
-
+          <Route path='/news' component={Blogs}/>
         </Switch>
       </main>
       <Footer/>

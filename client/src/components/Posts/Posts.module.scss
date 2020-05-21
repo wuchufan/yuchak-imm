@@ -1,0 +1,10 @@
+@import '../../sass/main';
+.container{
+  display:flex;
+  flex-direction:column;
+  background-color: white;
+  max-width: $max-width;
+  margin:auto;
+  padding:2rem;
+
+}

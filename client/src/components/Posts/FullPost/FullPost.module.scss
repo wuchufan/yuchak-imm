@@ -1,0 +1,44 @@
+@import "../../../sass/main";
+
+.container{
+  max-width: $max-width;
+  background-color:white;
+  margin:auto;
+  padding:2rem;
+
+}
+
+.inner-container{
+  padding:6rem;
+    border:1px solid #DDDDDD;
+}
+
+.title,
+.image,
+.content,
+.date{
+  margin-bottom: 3rem;
+}
+
+.title{
+  font-size:2.8rem;
+  
+}
+
+.date{
+  font-size: 1.4rem;
+
+  display: block;
+  color:#696969;
+}
+
+.content{
+  font-size: 1.8rem;
+
+}
+
+.image{
+  width:100%;
+  display: block;
+
+}

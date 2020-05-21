@@ -1,0 +1,53 @@
+.container{
+  display:grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-areas:
+  'image title'
+  'image content';
+  border:1px solid #DDDDDD;
+  align-items: center;
+  margin-bottom: 4rem;
+
+  &__image{
+    grid-area:image;
+
+  }
+
+  &__title{
+    grid-area:title;
+
+  }
+
+  &__content{
+    grid-area:content;
+    align-self: start;
+  }
+
+}
+
+.title,
+.content{
+  font-weight:lighter;
+  padding: 0 4rem;
+}
+
+.image{
+  width:100%;
+  display: block;
+  object-fit: cover;
+}
+.title{
+  font-size: 2.8rem;
+  text-decoration: none;
+  color:black;
+  display: block;
+  transition:all 0.2s ease;
+  &:hover{
+    color:#377DBD;
+  }
+}
+
+.content{
+  font-size:1.6rem;
+  color:#4c4c4c;
+}
